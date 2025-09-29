@@ -32,11 +32,7 @@ jobs:
           meson build --buildtype=release -Dbackend=ninja
           ninja -C build
           cd ..
-          dir lc0
-          dir lc0/build
-          dir lc0/bin
-          dir lc0/build/release
-          dir lc0/bin/release
+          dir lc0/lc0
 #          rm -r lc0
 #          mv -f build/release/lc0 engines/lc0
           
