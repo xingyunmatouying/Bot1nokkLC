@@ -31,11 +31,15 @@ jobs:
           cd lc0
           meson build --buildtype=release -Dbackend=ninja
           ninja -C build
-          wget https://storage.lczero.org/files/networks-contrib/big-transformers/BT4-1740.pb.gz
           cd ..
-          mv -f lc0/BT4-1740.pb.gz engines/BT4-1740.pb.gz
-          mv -f lc0/build/release/lc0 engines/lc0
-          rm -r lc0
+          dir lc0
+          dir lc0/build
+          dir lc0/bin
+          dir lc0/build/release
+          dir lc0/bin/release
+#          rm -r lc0
+#          mv -f build/release/lc0 engines/lc0
+          
 
       - name: Give perms to execute engine
         run: chmod +x ./engines/lc0
