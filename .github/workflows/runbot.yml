@@ -29,11 +29,15 @@ jobs:
           pip3 install meson
           git clone https://github.com/LeelaChessZero/lc0.git
           cd lc0
-          meson build --buildtype=release -Dbackend=ninja
-          ninja -C build
+          build.sh
           cd ..
-          mv -f lc0/lc0 engines/lc0
+          mv -f lc0/build/release/lc0 engines/lc0
           rm -r lc0
+#          meson build --buildtype=release -Dbackend=ninja
+#          ninja -C build
+#          cd ..
+#          mv -f lc0/lc0 engines/lc0
+#          rm -r lc0
           
 
       - name: Give perms to execute engine
