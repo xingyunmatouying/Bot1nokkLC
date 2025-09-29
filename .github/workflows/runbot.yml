@@ -33,10 +33,12 @@ jobs:
           ninja -C build
           cd ..
           dir lc0
-          mv lc0 lczero
-          mv -f lczero/lc0 engines/lc0
-          rm -r lc0
-          rm -r lczero
+          cd lc0
+          dir build
+ #         mv lc0 lczero
+ #         mv -f lczero/lc0 engines/lc0
+ #         rm -r lc0
+ #         rm -r lczero
           
 
       - name: Give perms to execute engine
