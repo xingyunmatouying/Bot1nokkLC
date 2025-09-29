@@ -22,19 +22,23 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Install Stockfish
+      - name: Install engine
         run: |
-          curl -sSL https://raw.githubusercontent.com/ppigazzini/stockfish-downloader/main/posix_helper.sh | sh -s
-          tar -xf stockfish-*.tar
-          rm stockfish-*.tar
-          mv -f stockfish/stockfish-* engines/stockfish
-          rm -r stockfish
+          sudo apt update
+          sudo apt install git build-essential meson ninja-build libopenblas-dev python3-pip
+          pip3 install meson
+          git clone -b --recurse-submodules https://github.com/LeelaChessZero/lc0.git
+          cd lc0
+          meson build --buildtype=release -Dbackend=openblas
+          ninja -C build
+          wget https://storage.lczero.org/files/networks-contrib/big-transformers/BT4-1740.pb.gz
+          cd ..
+          mv -f lc0/BT4-1740.pb.gz engines/BT4-1740.pb.gz
+          mv -f lc0/build/release/lc0 engines/lc0
+          rm -r lc0
 
-      - name: Give perms to execute engines
-        run: chmod +x ./engines/stockfish
-
-      - name: Give perms to execute engines 2
-        run: chmod +x ./engines/fairy-stockfish
+      - name: Give perms to execute engine
+        run: chmod +x ./engines/lc0
 
       - name: Replace token
         run: |
@@ -43,4 +47,4 @@ jobs:
       - name: Run bot
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }} 
-        run: python user_interface.py matchmaking
+        run: python user_interface.py
