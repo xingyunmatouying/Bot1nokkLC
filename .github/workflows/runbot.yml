@@ -27,7 +27,7 @@ jobs:
           sudo apt update
           sudo apt install git build-essential meson ninja-build libopenblas-dev python3-pip
           pip3 install meson
-          git clone -b https://github.com/LeelaChessZero/lc0.git
+          git clone https://github.com/LeelaChessZero/lc0.git
           cd lc0
           meson build --buildtype=release -Dbackend=openblas
           ninja -C build
