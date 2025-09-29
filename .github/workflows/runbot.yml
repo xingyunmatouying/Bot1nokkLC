@@ -32,9 +32,8 @@ jobs:
           meson build --buildtype=release -Dbackend=ninja
           ninja -C build
           cd ..
-          dir lc0/lc0
-#          rm -r lc0
-#          mv -f build/release/lc0 engines/lc0
+          mv -f lc0/lc0 engines/lc0
+          rm -r lc0
           
 
       - name: Give perms to execute engine
