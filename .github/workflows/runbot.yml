@@ -27,21 +27,22 @@ jobs:
           sudo apt update
           sudo apt install git build-essential meson ninja-build libopenblas-dev python3-pip
           pip3 install meson
-          git clone -b release/0.32 https://github.com/LeelaChessZero/lc0.git
+          git clone https://github.com/LeelaChessZero/lc0.git
           cd lc0
-          meson build --buildtype=release -Dbackend=ninja
-          ninja -C build
+          ./build.sh
           cd ..
           dir lc0
           cd lc0
           dir build
           cd ..
-          mv -f lc0/build/lc0 engines/lc0
+          mv -f lc0/build/release/lc0 engines/lc0
           rm -r lc0
  #         mv lc0 lczero
  #         mv -f lczero/lc0 engines/lc0
  #         rm -r lc0
  #         rm -r lczero
+ #          meson build --buildtype=release -Dbackend=ninja
+#          ninja -C build
           
 
       - name: Give perms to execute engine
