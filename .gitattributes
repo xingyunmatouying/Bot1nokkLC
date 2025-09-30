@@ -1,2 +1,6 @@
 *.pb.gz filter=lfs diff=lfs merge=lfs -text
 latest.txt filter=lfs diff=lfs merge=lfs -text
+BT4-1024x15x32h-swa-6147500.pb.gz filter=lfs diff=lfs merge=lfs -text
+BT4-1024x15x32h-swa-6147500.pb filter=lfs diff=lfs merge=lfs -text
+idk filter=lfs diff=lfs merge=lfs -text
+latest.txt.pb filter=lfs diff=lfs merge=lfs -text
