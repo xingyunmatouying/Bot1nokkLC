@@ -8,8 +8,7 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      MoveOverheadMs: 200
-      Threads: 4                  # Increase if your bot flags games too often.
+      MoveOverheadMs: 200                 # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 1.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -21,8 +20,7 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      MoveOverheadMs: 200
-      Threads: 4                 # Increase if your bot flags games too often.
+      MoveOverheadMs: 200                 # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 0.001                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -34,8 +32,7 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      MoveOverheadMs: 200
-      Threads: 4                 # Increase if your bot flags games too often.
+      MoveOverheadMs: 200                # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 1.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -47,8 +44,7 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      MoveOverheadMs: 200
-      Threads: 4                 # Increase if your bot flags games too often.
+      MoveOverheadMs: 200                # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 3.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
@@ -60,8 +56,7 @@ engines:
     silence_stderr: false                 # Suppresses stderr output.
     move_overhead_multiplier: 1.0         # Increase if your bot flags games too often. Default move overhead is 1 second per 1 minute initital time.
     uci_options:                          # Arbitrary UCI options passed to the engine.
-      MoveOverheadMs: 200
-      Threads: 4 # Increase if your bot flags games too often.
+      MoveOverheadMs: 200 # Increase if your bot flags games too often.
     limits:                               # Limits that end the move calculation early.
 #     time: 10.0                           # Max time per move in seconds.
 #     depth: 26                           # Max depth per move.
