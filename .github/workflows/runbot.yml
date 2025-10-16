@@ -17,36 +17,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: test
-        run: |
-          cd engines
-          dir
-
-#      - name: Set up Python
-#        uses: actions/setup-python@v5
-#        with:
-#          python-version: '3.13'
-#
-#      - name: Install dependencies
+#      - name: test
 #        run: |
-#          pip install -r requirements.txt
-#
-#
-#      - name: Replace token
- #       shell: powershell
- #      run: |
- #         $yamlFilePath = "config.yml"
- #         $searchString = "BOT_TOKEN"
- #         $secretValue = "${{ secrets.BOT_TOKEN }}"
- #
-#
- #         $fileContent = Get-Content $yamlFilePath
-#
- #         $newContent = $fileContent -replace $searchString, $secretValue
-#
- #         Set-Content $yamlFilePath -Value $newContent
-#
- #     - name: Run bot
-  #      env:
-   #       BOT_TOKEN: ${{ secrets.BOT_TOKEN }} 
-   #     run: python user_interface.py matchmaking
+#          cd engines
+#          dir
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+
+      - name: Replace token
+        shell: powershell
+        run: |
+         $yamlFilePath = "config.yml"
+         $searchString = "BOT_TOKEN"
+         $secretValue = "${{ secrets.BOT_TOKEN }}"
+
+         $fileContent = Get-Content $yamlFilePath
+
+         $newContent = $fileContent -replace $searchString, $secretValue
+
+         Set-Content $yamlFilePath -Value $newContent
+
+      - name: Run bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }} 
+        run: python user_interface.py matchmaking
